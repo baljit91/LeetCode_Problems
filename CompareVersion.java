@@ -4,7 +4,7 @@ public class CompareVersion {
 	    String[] versionTwo = b.split("\\.");
 
 	    int iterator = 0;
-        int limiter = Math.min(versionOne.length,versionTwo.length);
+            int limiter = Math.min(versionOne.length,versionTwo.length);
         
 	    while(iterator < limiter){
 	        int ver_one = Integer.parseInt(versionOne[iterator]);
