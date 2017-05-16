@@ -1,0 +1,33 @@
+// Brute force solution
+public class LongestPalindromicSubstring {
+    public String longestPalindrome(String s) {
+        int len = s.length();
+        String answer = "";
+        
+        for(int i=0; i < len; i++){
+            int j = len;
+            while(j > i){
+                String current = s.substring(i,j);
+                if(isPalindrome(current) && current.length() > answer.length()){
+                    answer = current;
+                }
+                j--;
+            }
+        }
+        return answer;
+    }
+    
+    boolean isPalindrome(String s){
+        int first = 0;
+        int last = s.length() - 1;
+        
+        while(first <= last){
+            if(s.charAt(first) != s.charAt(last)){
+                return false;
+            }
+            first++;
+            last--;
+        }
+        return true;
+    }
+}
