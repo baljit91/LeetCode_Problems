@@ -13,7 +13,7 @@ public class KnapsackWdp {
         if(currentIndex >= weight.length)
             return 0;
         
-        //If the weight of the current object is greater than capacity.we will not include current current object and           gonna check with next object
+        //If the weight of the current object is greater than capacity.we will not include current current object and gonna check with next object
         if(capacity < weight[currentIndex])
             return maximumValue(capacity, currentIndex + 1, weight, value);
         
@@ -22,7 +22,7 @@ public class KnapsackWdp {
             //1.including the current object.
             //2. not including the current object
             return Math.max(maximumValue(capacity, currentIndex + 1, weight, value),
-                            value[currentIndex] + maximumValue(capacity - weight[currentIndex], currentIndex + 1,                   weight, value));
+                            value[currentIndex] + maximumValue(capacity - weight[currentIndex], currentIndex + 1,weight, value));
         }
     }
 
